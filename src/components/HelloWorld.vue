@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
 
 defineProps<{ msg: string }>();
 
@@ -11,7 +10,7 @@ console.log(bigList, "11");
   <div class="faDiv">
     <div class="children">
       <div class="list">
-        <div class="row" v-for="(item, i) in bigList">
+        <div class="row" v-for="(item, i) in bigList" :key="i">
           {{ item.n }}
         </div>
       </div>
