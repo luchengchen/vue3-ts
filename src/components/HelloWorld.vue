@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 defineProps<{ msg: string }>();
 
 const bigList = new Array(200000).fill(null).map((_ele, i) => ({ n: i + 1 }));
@@ -21,9 +20,9 @@ console.log(bigList, "11");
 <style scoped>
 .faDiv {
   position: relative;
-  left:0;
-  right:0;
-  top:0;
+  left: 0;
+  right: 0;
+  top: 0;
   height: 400px;
   overflow-y: scroll;
 }
