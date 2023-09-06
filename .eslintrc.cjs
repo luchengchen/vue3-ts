@@ -7,7 +7,9 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:vue/vue3-essential",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+          // 新增，必须放在最后面
+        'plugin:prettier/recommended' 
     ],
     "overrides": [
     ],
