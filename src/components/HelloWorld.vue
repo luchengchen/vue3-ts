@@ -26,7 +26,7 @@ console.log(bigList, "11");
 }
 .list {
   position: absolute;
-  top:0;
+  top: 0;
   width: 100%;
 }
 </style>
