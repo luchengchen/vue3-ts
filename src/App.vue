@@ -1,11 +1,11 @@
-<script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-</script>
 
 <template>
-  <HelloWorld msg="小路" />
+  <h1>APP</h1>
+  <router-view />
 </template>
+<script setup lang="ts">
 
+</script>
 <style scoped>
 .logo {
   height: 6em;

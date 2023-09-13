@@ -1,8 +1,8 @@
 <script setup lang="ts">
-defineProps<{ msg: string }>();
+// defineProps<{ msg: string }>();
 
-const bigList = new Array(200000).fill(null).map((_ele, i) => ({ n: i + 1 }));
-console.log(bigList, "11");
+// const bigList = new Array(200000).fill(null).map((_ele, i) => ({ n: i + 1 }));
+// console.log(bigList, "11");
 </script>
 
 <template>
