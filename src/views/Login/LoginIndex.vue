@@ -17,11 +17,11 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { reactive } from 'vue'
+import { reactive } from "vue";
 const form = reactive({
-  name: '',
-  password:''
-})
+  name: "",
+  password: "",
+});
 const login = () => {};
 </script>
 <style></style>
