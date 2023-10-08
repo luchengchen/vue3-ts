@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
-    <div class="content flex">
-      <div class="flex-left">LOGIN</div>
-      <div class="flex-right">
+  <div class="common-layout">
+    <el-container>
+      <el-aside width="200px">LOGIN</el-aside>
+      <el-main>
         <el-form :model="form" label-width="120px">
           <el-form-item label="账户名">
             <el-input v-model="form.name" />
@@ -12,8 +12,8 @@
           </el-form-item>
         </el-form>
         <el-button type="primary" @click="login">登录</el-button>
-      </div>
-    </div>
+      </el-main>
+    </el-container>
   </div>
 </template>
 <script lang="ts" setup>
