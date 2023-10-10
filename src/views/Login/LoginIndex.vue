@@ -18,7 +18,7 @@
 </template>
 <script lang="ts" setup>
 import { reactive } from "vue";
-import {userLogin} from "../../api/index"
+import { userLogin } from "../../api/index";
 const form = reactive({
   name: "",
   password: "",
@@ -32,8 +32,8 @@ const login = async () => {
     client_id: "opcloud",
     client_secret: "1",
   };
-  const res = await userLogin(para)
-  console.log(res,"reeee")
+  const res = await userLogin(para);
+  console.log(res, "reeee");
 };
 </script>
 <style></style>

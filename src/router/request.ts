@@ -1,7 +1,7 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 import { getToken, messageAlert, removeToken } from "../utils/utils";
 import router from "../router";
-function request(option?: RequestOptions): AxiosInstance {
+function request(option?: RequestOptions) {
   const baseURL = "/v2";
   const service = axios.create({
     responseType: option?.responseType,
@@ -12,7 +12,7 @@ function request(option?: RequestOptions): AxiosInstance {
   service.interceptors.request.use(
     function (config) {
       //在发送请求之前做些什么，例如请求头上加入token
-      let token = getToken("accessToken");
+      const token = getToken("accessToken");
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
@@ -21,7 +21,7 @@ function request(option?: RequestOptions): AxiosInstance {
     function (error) {
       // 对请求错误的时候做些什么
       return Promise.reject(error);
-    }
+    },
   );
 
   // 响应拦截器
@@ -42,7 +42,7 @@ function request(option?: RequestOptions): AxiosInstance {
       errmsg && messageAlert("error", errmsg, false, 2500, true);
       return Promise.reject(errmsg);
       // 对响应错误的时候做些什么
-    }
+    },
   );
   return service;
 }
@@ -76,6 +76,7 @@ function responseStatus(response: AxiosResponse): string {
  */
 function userInvalid(response: AxiosResponse): string {
   removeToken();
+  console.log(response, "response");
   const currentPath = router.currentRoute.value.fullPath;
   if (!unCheckPaths.some((path) => currentPath.includes(path))) {
     router.replace({
