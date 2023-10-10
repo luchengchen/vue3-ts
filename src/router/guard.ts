@@ -13,14 +13,8 @@ export function routerGuard(router: Router) {
         console.log(hasToken, "hasToken");
         hasToken == null && messageAlert("error", "登录失效，请重新登录");
         removeToken();
-        // 不执行当前跳转操作
-        //  const redirect: string | undefined =
-        //  to.fullPath === "/login" ? undefined : to.fullPath;
         return router.replace({
           path: `/login`,
-          // query: {
-          //     redirect: (redirect && redirect)?.split("?")[0],
-          //   }
         });
       }
     }

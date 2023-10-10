@@ -15,4 +15,14 @@ export default defineConfig({
       "@/assets": resolve(__dirname, "src/assets/"),
     },
   },
+  server: {
+    proxy: {
+      "/v2/api": {
+        target: "https://test.opcloud.com/v2/api",
+        secure: false,
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/v2\/api/, ""),
+      },
+    },
+  },
 });

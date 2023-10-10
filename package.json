@@ -13,6 +13,7 @@
     "commitlint": "commitlint --config commitlint.config.cjs -e -V"
   },
   "dependencies": {
+    "axios": "^1.5.1",
     "element-plus": "^2.3.12",
     "serve": "^14.2.1",
     "vue": "^3.3.4",

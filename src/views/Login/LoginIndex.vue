@@ -18,10 +18,22 @@
 </template>
 <script lang="ts" setup>
 import { reactive } from "vue";
+import {userLogin} from "../../api/index"
 const form = reactive({
   name: "",
   password: "",
 });
-const login = () => {};
+const login = async () => {
+  let para = {
+    username: "luchengchen_666",
+    orgNumber: "6666",
+    password: "1234567_",
+    grant_type: "password",
+    client_id: "opcloud",
+    client_secret: "1",
+  };
+  const res = await userLogin(para)
+  console.log(res,"reeee")
+};
 </script>
 <style></style>
