@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import { routerGuard } from "./guard";
+import Layout from "@/views/Layout/LayoutIndex.vue";
 // 2.配置路由列表
 const routes: Array<RouteRecordRaw> = [
   {
@@ -23,15 +24,22 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/Login/LoginIndex.vue"),
   },
   {
-    name: "home",
-    path: "/home",
-    meta: {
-      title: "首页",
-      hidden: false,
-      icon: "Promotion",
-    },
-    component: () => import("@/views/Home/HomeIndex.vue"),
+    component: Layout,
+    path: "/",
+    children: [
+      {
+        name: "home",
+        path: "/home",
+        meta: {
+          title: "首页",
+          hidden: false,
+          icon: "Promotion",
+        },
+        component: () => import("@/views/Home/HomeIndex.vue"),
+      },
+    ],
   },
+
   {
     path: "/",
     redirect: "/home",
